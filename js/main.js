@@ -11,25 +11,19 @@ var sheetElement = null,
 
 $(function() {
     $("#fileInput").change( function (e) {
-        console.log('fileInput change triggered');
         var files = e.target.files;
         if ( ! files || files.length == 0 ) return;
         var file = files[0];
         if ( ! file.type.match('image.*') ) return;
-        console.log( file );
         var reader = new FileReader();
         reader.onload = function(theFile) {
-            console.log('reader.onload complete.. theFile:');
-            console.log(theFile);
             var container = $("<div></div>");
             sheetElement = $("<img>").attr( 'src', theFile.target.result );
             container.append( sheetElement );
             container.appendTo( $("div#spritesheetContainer") );
-            console.log( container );
             sheetImage = new Image();
             sheetImage.src = theFile.target.result;
             setSheetZoomFactor();
-
             sheetElement.click( sheetClick );
         }
         if ( sheetElement ) sheetElement.remove();
@@ -66,7 +60,6 @@ $(function() {
 });
 
 function sheetClick( e ) {
-    // e.offsetX, e.offsetY
     var clickX = Math.round( e.offsetX / sheetZoomFactor ),
         clickY = Math.round( e.offsetY / sheetZoomFactor),
         spriteWidth = $("#spriteWidth").val(),
@@ -116,7 +109,6 @@ function setSpriteZoomFactor( factor ) {
         newHeight = Math.round( spriteHeight * spriteZoomFactor),
         newSheetWidth = Math.round( sheetImage.width * spriteZoomFactor),
         newSheetHeight = Math.round( sheetImage.height * spriteZoomFactor);
-    console.log( 'setting spriteElement height to %d and width to %d', newHeight, newWidth);
     var bgX = ((spriteColumn * spriteWidth) * spriteZoomFactor) * -1,
         bgY = ((spriteRow * spriteHeight) * spriteZoomFactor) * -1;
     spriteElement.css({
