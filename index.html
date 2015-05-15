@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Spritesheet Indexer</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+    <div class="container-fluid">
+
+        <div class="row-fluid">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Options</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row-fluid">
+                            <div class="col-md-4">
+                                <label for="fileInput">File:</label>
+                                <input type="file" id="fileInput" name="file"/>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="spriteWidth">Sprite Width:</label>
+                                <input type="number" id="spriteWidth" value="16"/>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="spriteHeight">Sprite Height:</label>
+                                <input type="number" id="spriteHeight" value="16"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Spritesheet</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="zoomControls">
+                            Zoom:
+                            <button class="btn btn-default btn-sm zoomIn" id="zoomInSheet">+</button>
+                            <button class="btn btn-default btn-sm zoomOut" id="zoomOutSheet">-</button>
+                            <span id="sheetZoomFactor"></span>
+                        </div>
+                        <div id="spritesheetContainer"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Selected Sprite</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="zoomControls">
+                            Zoom:
+                            <button class="btn btn-default btn-sm zoomIn" id="zoomInSprite">+</button>
+                            <button class="btn btn-default btn-sm zoomOut" id="zoomOutSprite">-</button>
+                            <span id="spriteZoomFactor"></span>
+                        </div>
+                        <div id="spriteContainer"></div>
+                        <div>
+                            X: <span id="selectedX">-</span>,
+                            Y: <span id="selectedY">-</span>,
+                            Column: <span id="selectedColumn">-</span>,
+                            Row: <span id="selectedRow">-</span>,
+                            Index: <span id="selectedIndex">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

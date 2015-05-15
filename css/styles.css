@@ -1,0 +1,30 @@
+input[type=file] { display: inline; }
+
+#spritesheetContainer {
+    min-height: 100px;
+    background-color: #efefef;
+    padding: 10px;
+    overflow: auto;
+    margin: 10px 20px 10px 0px;
+}
+
+#spriteContainer {
+    min-height: 100px;
+    background-color: #efefef;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+#spritesheetContainer img, #spriteContainer > div {
+    display: block;
+    margin: auto;
+}
+
+button.zoomIn, button.zoomOut {
+    width: 30px;
+}
+
+#selectedX, #selectedY, #selectedRow, #selectedColumn, #selectedIndex {
+    font-weight: bold;
+    padding: 0px 10px;
+}
