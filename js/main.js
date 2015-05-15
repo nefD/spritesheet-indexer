@@ -55,9 +55,29 @@ $(function() {
         setSpriteZoomFactor( spriteZoomFactor );
     });
 
+    $("#spriteWidth").change( function () {
+        spriteWidth = $("#spriteWidth").val();
+        clearSpriteElement();
+    });
+
+    $("#spriteHeight").change( function () {
+        spriteHeight = $("#spriteHeight").val();
+        clearSpriteElement();
+    });
+
     setSheetZoomFactor( sheetZoomFactor );
     setSpriteZoomFactor( spriteZoomFactor );
 });
+
+function clearSpriteElement() {
+    if ( spriteElement ) spriteElement.remove();
+    $("#selectedX").text("-");
+    $("#selectedY").text("-");
+    $("#selectedColumn").text("-");
+    $("#selectedRow").text("-");
+    $("#selectedIndex").text("-");
+}
+
 
 function sheetClick( e ) {
     var clickX = Math.round( e.offsetX / sheetZoomFactor ),
